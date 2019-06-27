@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom'
 
+import './Navbar.scss';
 class Navbar extends Component {
 
   render() {
@@ -8,8 +10,10 @@ class Navbar extends Component {
     console.log({pseudo})
     return (
       <div className="Navbar">
-        <h1>Oui</h1>
-        <img src={avatar} alt="profil" />
+        <img src ='/images/Logo.png' className='logo' alt="logo"/>
+        <NavLink className='avatar' to='/profil'>
+          <img src={avatar}  alt="profil" />
+        </NavLink>
       </div>
     );
   }
