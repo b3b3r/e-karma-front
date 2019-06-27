@@ -1,0 +1,65 @@
+@import '../vars';
+
+.Input {
+  position: relative;
+  margin: 45px 0;
+  
+  input {
+    background: none;
+    color: $primaryColor;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: $inputWidth;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid $primaryColor;
+    box-sizing: border-box;
+  
+    &:focus {
+      outline: none;
+    }
+
+    &:focus ~ label {
+      top: -14px;
+      font-size: 12px;
+      color: $primaryColor;
+    }
+
+    &:focus ~ .bar:before {
+      width: $inputWidth;
+    }
+  }
+  
+  input[type="password"] {
+    letter-spacing: 0.3em;
+  }
+  
+  label {
+    color: $primaryColor;
+    font-size: 22px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: .3s ease all;
+  }
+  
+  .bar {
+    position: relative;
+    display: block;
+    width: $inputWidth;
+
+    &:before {
+      content: '';
+      height: 2px;
+      width: 0;
+      bottom: 0px;
+      position: absolute;
+      background: $primaryColor;
+      transition: .3s ease all;
+      left: 0%;
+    }
+  }
+}
