@@ -1,5 +1,5 @@
 import React from 'react';
-import Gamification from './gamification';
+import Gamification from './Gamification';
 
 function Profil() {
   return (

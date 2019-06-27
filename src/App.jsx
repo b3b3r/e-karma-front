@@ -1,5 +1,5 @@
 import React from 'react';
-import Profil from './components/profil';
+import Profil from './components/Profil';
 import { Switch, Route } from 'react-router-dom';
 
 import Components from './Components';
