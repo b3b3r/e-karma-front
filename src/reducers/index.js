@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
-const allReducers = combineReducers({
+import displayUser from './user.js';
 
+const allReducers = combineReducers({
+    displayUser,
   });
   
   export default allReducers;
