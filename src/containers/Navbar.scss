@@ -1,16 +1,13 @@
 .Navbar {
-    background-color: rgb(255, 106, 0);
-    display: flex;
-    justify-content: space-between;
-    padding: 1%;
-    .logo {
-        width: 10%;
-    }
-    .avatar {
-        width: 100px;
-        & > img {
-            width: 100px;
-            border-radius: 50%;
-        }
-    }
+  background-color: rgb(255, 106, 0);
+  display: flex;
+  justify-content: space-between;
+  padding: 1%;
+  .logo {
+    width: 100px;
+  }
+  .avatar {
+    width: 100px;
+    border-radius: 50%;
+  }
 }
