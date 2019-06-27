@@ -1,0 +1,12 @@
+/* Colors */
+$primaryColor: #2a75bb;
+$primaryColorDarken: darken($primaryColor, 5%);
+$primaryColorLighten: lighten($primaryColor, 5%);
+$secondaryColor: #c53333;
+$secondaryColorDarken: darken($secondaryColor, 5%);
+$secondaryColorLighten: lighten($secondaryColor, 5%);
+$greyColor: #79869e;
+$darkgreyColor: #3B424E;
+
+/* Forms */
+$inputWidth: 320px;
