@@ -1,4 +1,5 @@
 import React from 'react';
+import Profil from './components/profil';
 import { Switch, Route } from 'react-router-dom';
 
 import Components from './Components';
@@ -10,6 +11,7 @@ function App() {
     <div className="App">
       <Switch>
         <Route path="/components" component={Components} />
+        <Route path="/profil" component={Profil} />
       </Switch>
     </div>
   );
