@@ -1,13 +1,13 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import './Sousmenu.scss';
 
 function Sousmenu() {
   return (
     <div className="Sousmenu">
-      <Link to="/profil/monhistorique"><button className="buton-profil">Mon historique</button></Link>
-      <Link to="/profil/infoskarma"><button className="buton-profil">Infos Karma</button></Link>
-      <Link to="/profil/gamification"><button className="buton-profil">Gamification</button></Link>
+      <NavLink to="/profil/monhistorique"><button className="bouton-profil">Mon historique</button></NavLink>
+      <NavLink to="/profil/infoskarma"><button className="bouton-profil">Infos Karma</button></NavLink>
+      <NavLink to="/profil/gamification"><button className="bouton-profil">Gamification</button></NavLink>
     </div>
   )
 }
