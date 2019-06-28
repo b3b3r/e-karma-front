@@ -2,16 +2,40 @@
 
 .Sousmenu{
   display: flex;
-  justify-content: center;
-  .bouton-profil{
-    width: 200px;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid $borderDarkerColor;
+  background-color: $navBgColor;
+  list-style: none;
+  
+  li {
     height: 50px;
-    font-size: 20px;
-    margin: 10px;
-  }
-  .active{
-    button{
-      background-color: $primaryColor ;
+    line-height: 50px;
+    margin: 0;
+    padding: 0 15px;
+    border-right: 1px solid $navBorderColor;
+    color: $navItemColor;
+
+    &:first-child {
+      margin-left: 30px;
+    }
+
+    &:hover {
+      background-color: $navBgColorHover;
+    }
+
+    a {
+      padding: 10px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      color: $primaryColor;
+      text-transform: uppercase;
+  
+      &:visited {
+        color: inherit;
+      }
     }
   }
 }
