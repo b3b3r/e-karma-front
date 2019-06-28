@@ -1,5 +1,7 @@
+@import '../vars';
+
 .Navbar {
-  background-color: #2B64FF;
+  background-color: $primaryColor;
   display: flex;
   justify-content: space-between;
   padding: 1%;
