@@ -18,7 +18,7 @@ class Home extends Component {
     top.push(usersArray[usersArray.length - 2]);
     return (
       <div className="Home">
-        <Input label="Recherche" />
+        <Input label="Recherche" className="recherche"/>
         <div className="topics">
           {topics.map(topic => (
             <NavLink to="/topics/1" className="liens"><div className="topic">
