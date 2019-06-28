@@ -1,32 +1,32 @@
-const initialState = [
-    {
-        id: 1,
-        titre: 'Pourquoi mon chat est moche ?',
-        tags: ['#animaux', '#questions con'],
-        commentaires: 25,
-    },
-    {
-        id: 2,
-        titre: 'Pourquoi mon chien est moche ?',
-        tags: ['#animaux', '#questions con'],
-        commentaires: 2,
-    },
-    {
-        id: 3,
-        titre: 'Pourquoi LoL est mort ?',
-        tags: ['#jeux vidéos', '#deadgames'],
-        commentaires: 16,
-    },
-    {
-        id: 4,
-        titre: 'Pourquoi Fortnite est bien ?',
-        tags: ['#jeux vidéos', '#Battle Royal'],
-        commentaires: 52,
-    }
-]
+const initialState = {
+    loading: false,
+    list: [],
+    error: '',
+};
 
 const topics = (state = initialState, action) => {
-    switch(action.type) {
+    switch (action.type) {
+        case 'START_FETCH_TOPICS': {
+            return {
+              ...state,
+              loading: true,
+            };
+          }
+          case 'FETCH_SUCCESS_TOPICS': {
+            return {
+              loading: false,
+              list: [...action.topics],
+              error: '',
+            };
+          }
+          case 'FETCH_ERROR_TOPICS': {
+            return {
+              ...state,
+              loading: false,
+              error: action.err,
+            };
+          }
+        
         default:
             return state;
     }

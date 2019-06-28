@@ -5,10 +5,18 @@ import { NavLink } from "react-router-dom";
 import Input from "../common/Input";
 
 import "./Home.scss";
+import { bindActionCreators } from "redux";
+import { asyncFetchTopics } from '../actions/search';
 
 class Home extends Component {
+  componentDidMount() {
+    const { asyncFetchTopics } = this.props;
+    asyncFetchTopics();
+  }
+
   render() {
     const { topics, users } = this.props;
+    
     const top = [];
     const usersArray = [...users].sort(
       (a, b) => parseFloat(a.karma) - parseFloat(b.karma)
@@ -18,18 +26,18 @@ class Home extends Component {
     top.push(usersArray[usersArray.length - 2]);
     return (
       <div className="Home">
-        <Input label="Recherche" className="recherche"/>
+        <Input label="Recherche" className="recherche" />
         <div className="topics">
           {topics.map(topic => (
             <NavLink to="/topics/1" className="liens"><div className="topic">
               <div className="core">
-                <div className="title">{topic.titre}</div>
+                <div className="title">{topic.title}</div>
                 <div className="comments">
-                  {topic.commentaires} commentaires
+                  {topic.comments.length} commentaires
                 </div>
               </div>
               <div className="tags">
-                {topic.tags.map(tag => (
+              {topic.tags.map(tag => (
                   <div className="tag">{tag}</div>
                 ))}
               </div>
@@ -73,8 +81,12 @@ class Home extends Component {
 }
 
 const mstp = state => ({
-  topics: state.topics,
+  topics: state.topics.list,
   users: state.users
 });
 
-export default connect(mstp)(Home);
+const mdtp = dispatch => bindActionCreators(
+  { asyncFetchTopics },
+  dispatch,
+)
+export default connect(mstp, mdtp)(Home);
