@@ -3,6 +3,10 @@ import Comment from './Comment';
 
 import './Topic.scss';
 
+const topicTitle = {
+  title: 'Pourquoi mon chat est-il aussi moche ?',
+};
+
 const commentTitle = {
   user: {
     avatar: 'avatar1',
@@ -10,7 +14,6 @@ const commentTitle = {
     karma: 48,
     dateSubscribe: 1561574868526,
   },
-  title: 'Pourquoi mon chat est-il aussi moche ?',
   comment: `Il n'a rien pour attirer les regards.... Il est tout maigre, tout rikiki, sa couleur est plutôt étrange, il a la queue cassée à plusieurs endroits alors elle forme une boucle toute bizarre....
 
   Mais depuis qu'il est entré dans ma vie, j'en suis tombée amoureuse !
@@ -102,6 +105,9 @@ class Topic extends Component {
   render() { 
     return ( 
       <div className="Topic">
+        <div className="topic-title">
+          {topicTitle.title}
+        </div>
         <Comment {...commentTitle} />
         <Comment {...topComment} />
         <Comment {...comment1} />

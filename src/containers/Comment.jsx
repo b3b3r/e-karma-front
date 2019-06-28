@@ -9,16 +9,12 @@ import downvotes from '../images/arrow-down.svg';
 
 import './Comment.scss';
 
-const Comment = ({ user, title, date, comment, votes, top, worst }) => {
+const Comment = ({ user, date, comment, votes, top, worst }) => {
   const clsComment = ClassNames('Comment', {
     top,
     worst,
     'positive-karma': user.karma > 0,
     'negative-karma': user.karma < 0,
-  });
-
-  const clsTitle = ClassNames('title', {
-    hidden: title === '',
   });
 
   return (
@@ -27,9 +23,6 @@ const Comment = ({ user, title, date, comment, votes, top, worst }) => {
       <div className="content">
         <div className="date">
           {`Posté le ${moment(date).format('DD/MM/YYYY')} à ${moment(date).format('HH:mm:ss')}`}
-        </div>
-        <div className={clsTitle}>
-          {title}
         </div>
         <div className="comment">
           {comment}
