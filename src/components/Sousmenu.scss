@@ -1,12 +1,17 @@
+@import '../vars';
+
 .Sousmenu{
   display: flex;
-  .mon-historique{
-    margin: 50px;
+  justify-content: center;
+  .bouton-profil{
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    margin: 10px;
   }
-  .infos-karma{
-    margin: 50px;
-  }
-  .gamification{
-    margin: 50px;
+  .active{
+    button{
+      background-color: $primaryColor ;
+    }
   }
 }

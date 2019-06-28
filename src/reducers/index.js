@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 
-import displayUser from './user.js';
+import users from './users.js';
+import topics from './topics.js';
 
 const allReducers = combineReducers({
-    displayUser,
+    users,
+    topics,
   });
   
   export default allReducers;
