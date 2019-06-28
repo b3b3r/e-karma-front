@@ -4,6 +4,8 @@ import { NavLink } from "react-router-dom";
 import { bindActionCreators } from 'redux';
 import { asyncFetchUsers } from '../actions/fetchUsers.js';
 import { asyncFetchTopics } from '../actions/search';
+import { asyncFetchTags } from '../actions/search';
+import { urlApi } from '../constant';
 
 import Input from "../common/Input";
 
@@ -11,16 +13,24 @@ import "./Home.scss";
 
 
 class Home extends Component {
-
   componentDidMount() {
-    const { asyncFetchTopics, asyncFetchUsers } = this.props;
+    const { asyncFetchTopics, asyncFetchUsers, asyncFetchTags } = this.props;
     asyncFetchTopics();
     asyncFetchUsers();
+    asyncFetchTags();
+  }
+
+  findRandomTag = () => {
+    const { tags } = this.props;
+    if (tags.length > 0) {
+      const randomNum = parseInt(Math.random() * tags.length);
+      return tags[randomNum].name;
+    }
+    return '';
   }
 
   render() {
     const { topics, users } = this.props;
-    
     const top = [];
     const usersArray = [...users].sort(
       (a, b) => parseFloat(a.karma) - parseFloat(b.karma)
@@ -49,7 +59,11 @@ class Home extends Component {
               </div>
               <div className="tags">
               {topic.tags.map(tag => (
-                  <div className="tag">{tag}</div>
+                  <div className="tag">
+                    {
+                      this.findRandomTag()
+                    }
+                  </div>
                 ))}
               </div>
             </div>
@@ -94,10 +108,11 @@ class Home extends Component {
 const mstp = state => ({
   topics: state.topics.list,
   users: state.users.users,
+  tags: state.tags.list,
 });
 
 const mdtp = dispatch => bindActionCreators(
-  { asyncFetchTopics, asyncFetchUsers },
+  { asyncFetchTopics, asyncFetchUsers, asyncFetchTags },
   dispatch,
 )
 
