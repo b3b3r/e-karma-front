@@ -1,0 +1,41 @@
+@import '../../vars';
+
+.Sousmenu{
+  display: flex;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid $borderDarkerColor;
+  background-color: $navBgColor;
+  list-style: none;
+  
+  li {
+    height: 50px;
+    line-height: 50px;
+    margin: 0;
+    padding: 0 15px;
+    border-right: 1px solid $navBorderColor;
+    color: $navItemColor;
+
+    &:first-child {
+      margin-left: 30px;
+    }
+
+    &:hover {
+      background-color: $navBgColorHover;
+    }
+
+    a {
+      padding: 10px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      color: $primaryColor;
+      text-transform: uppercase;
+  
+      &:visited {
+        color: inherit;
+      }
+    }
+  }
+}

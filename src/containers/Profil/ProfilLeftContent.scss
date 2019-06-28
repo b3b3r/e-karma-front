@@ -1,0 +1,71 @@
+@import "../../vars";
+
+.ProfilLeftContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  min-width: 300px;
+  height: calc(100vh - 76px);
+  border-right: 2px solid $borderDarkerColor;
+  background-color: $backgroundColorLighten;
+  box-shadow: 2px 0px 18px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+
+  &.positive-karma .user-karma > span:first-child {
+    background-color: green;
+  }
+
+  &.negative-karma .user-karma > span:first-child {
+    background-color: red;
+  }
+
+  .avatar img {
+    width: 160px;
+    margin: 15px 0;
+    border: 2px solid $borderColor;
+    border-radius: 50%;
+    padding: 18px;
+    overflow: hidden;
+    background-color: white;
+  }
+
+  .user-name {
+    margin: 25px 0;
+    color: $primaryColor;
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  .karma-title {
+    font-size: 18px;
+    font-style: italic;
+  }
+
+  .user-karma {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 24px;
+    margin: 3px 0;
+    border: 1px solid $borderDarkerColor;
+    border-radius: 3px;
+    background-color: $backgroundColorDarken;
+
+    > span:first-child {
+      display: inline-block;
+      height: 24px;
+    }
+
+    > span:last-child {
+      position: absolute;
+      top: 0;
+      left: 40%;
+      line-height: 24px;
+      font-weight: bold;
+      color: white;
+    }
+  }
+}
