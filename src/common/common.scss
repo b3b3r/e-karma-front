@@ -1,5 +1,11 @@
 @import './vars';
 
+body {
+  margin: 0;
+  padding: 0;
+  color: $textColor;
+}
+
 /* Colors */
 .primaryColor {
   color: $primaryColor;

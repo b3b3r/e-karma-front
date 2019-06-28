@@ -7,6 +7,18 @@ $secondaryColorDarken: darken($secondaryColor, 5%);
 $secondaryColorLighten: lighten($secondaryColor, 5%);
 $greyColor: #79869e;
 $darkgreyColor: #3B424E;
+$backgroundColor: #ececec;
+$backgroundColorLighten: lighten($backgroundColor, 5%);
 
 /* Forms */
 $inputWidth: 320px;
+
+/* Borders */
+$borderColor: #dfdfdf;
+$borderDarkerColor: #d8d8d8;
+$borderLighterColor: #e0e0e0;
+
+/* Texts */
+$textColor: #3a3a3a;
+$textColorLighten: #8c8c8c;
+$textColorDarken: #292929;
