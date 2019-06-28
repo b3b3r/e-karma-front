@@ -1,4 +1,5 @@
 import React from 'react';
+import './Historique.scss';
 
 const myHistory = [{
   date: '20/06/2019',
@@ -20,10 +21,12 @@ function Historique() {
   return (
     <div className="Historique">
       <ul>
-        {myHistory.map(history=>
-        <li>date:{history.date}
-         topic:{history.topic}
-         message:{history.sentence}</li>)}
+        {myHistory.map(history =>
+          <li>date : {history.date}
+            <span className="coucou"></span>
+            topic : {history.topic}
+            <span className="coucou"></span>
+            message : {history.sentence}</li>)}
       </ul>
     </div>
   )
