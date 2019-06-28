@@ -53,12 +53,16 @@
     }
   }
   .top-worst {
+    display: flex;
     .top {
       display: flex;
       flex-direction: column;
+      text-align: center;
+      justify-content: center;
       .top-user {
         display: flex;
         align-items: center;
+        justify-content: center;
         margin-bottom: 2%;
         .avatar {
           width: 10%;
@@ -68,7 +72,7 @@
           flex-direction: column;
           border: solid $primaryColorLighten 2px;
           padding: 1%;
-          width: 25%;
+          width: 50%;
           .pseudo {
             margin-bottom: 10%;
             font-size: 32px;
@@ -86,9 +90,11 @@
     .worst {
       display: flex;
       flex-direction: column;
+      text-align: center;
       .worst-user {
         display: flex;
         align-items: center;
+        justify-content: center;
         margin-bottom: 2%;
         .avatar {
           width: 10%;
@@ -98,7 +104,7 @@
           flex-direction: column;
           border: solid $primaryColorLighten 2px;
           padding: 1%;
-          width: 25%;
+          width: 50%;
           .pseudo {
             margin-bottom: 10%;
             font-size: 32px;
