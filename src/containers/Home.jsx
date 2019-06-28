@@ -1,17 +1,21 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { bindActionCreators } from 'redux';
+import { asyncFetchUsers } from '../actions/fetchUsers.js';
+import { asyncFetchTopics } from '../actions/search';
 
 import Input from "../common/Input";
 
 import "./Home.scss";
-import { bindActionCreators } from "redux";
-import { asyncFetchTopics } from '../actions/search';
+
 
 class Home extends Component {
+
   componentDidMount() {
-    const { asyncFetchTopics } = this.props;
+    const { asyncFetchTopics, asyncFetchUsers } = this.props;
     asyncFetchTopics();
+    asyncFetchUsers();
   }
 
   render() {
@@ -24,6 +28,13 @@ class Home extends Component {
     const worst = usersArray.slice(0, 2);
     top.push(usersArray[usersArray.length - 1]);
     top.push(usersArray[usersArray.length - 2]);
+    if (users.length === 0) {
+      return (
+        <div className="Home">
+          No users...
+        </div>
+      )
+    }
     return (
       <div className="Home">
         <Input label="Recherche" className="recherche" />
@@ -50,9 +61,9 @@ class Home extends Component {
             <h2>Top Utilisateurs</h2>
             {top.map(user => (
               <div className="top-user">
-                <img src={user.avatar} className="avatar" alt="avatar" />
+                <img src={`/images/avatars/${user.imgUrl}.png`} className="avatar" alt="avatar" />
                 <div className="desc">
-                  <div className="pseudo">{user.pseudo}</div>
+                  <div className="pseudo">{user.nickname}</div>
                   <div className="karma">
                     Karma: <span className="int">{user.karma}</span>
                   </div>
@@ -64,9 +75,9 @@ class Home extends Component {
             <h2>Top Trolls</h2>
             {worst.map(user => (
               <div className="worst-user">
-                <img src={user.avatar} className="avatar" alt="avatar" />
+                <img src={`/images/avatars/${user.imgUrl}.png`} className="avatar" alt="avatar" />
                 <div className="desc">
-                  <div className="pseudo">{user.pseudo}</div>
+                  <div className="pseudo">{user.nickname}</div>
                   <div className="karma">
                     Karma: <span className="int">{user.karma}</span>
                   </div>
@@ -82,11 +93,12 @@ class Home extends Component {
 
 const mstp = state => ({
   topics: state.topics.list,
-  users: state.users
+  users: state.users.users,
 });
 
 const mdtp = dispatch => bindActionCreators(
-  { asyncFetchTopics },
+  { asyncFetchTopics, asyncFetchUsers },
   dispatch,
 )
+
 export default connect(mstp, mdtp)(Home);

@@ -3,9 +3,7 @@ import './Pseudo.scss';
 import { bindActionCreators } from 'redux';
 import { connect } from "react-redux";
 
-function Pseudo({ user }) {
-  console.log(user);
-  
+function Pseudo({ user }) {  
   return (
     <div className="Pseudo">
       <div>
