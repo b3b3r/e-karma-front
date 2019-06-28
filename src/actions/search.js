@@ -27,3 +27,27 @@ export const asyncFetchTopics = () => (dispatch) => {
       dispatch(FetchErrorTopics('Erreur lors du chargement des topics'));
     });
 };
+
+export const StartFetchTags = () => ({
+  type: 'START_FETCH_TAGS',
+});
+export const FetchSuccessTags = tags => ({
+  type: 'FETCH_SUCCESS_TAGS',
+  tags,
+});
+export const FetchErrorTags = err => ({
+  type: 'FETCH_ERROR_TAGS',
+  err,
+});
+
+export const asyncFetchTags = () => (dispatch) => {
+  StartFetchTags();
+  fetch(`${urlApi}/tags`)
+    .then(res => res.json())
+    .then((apiResponse) => {
+      dispatch(FetchSuccessTags(apiResponse['hydra:member']));
+    })
+    .catch(() => {
+      dispatch(FetchErrorTags('Erreur lors du chargement des tags'));
+    });
+};
