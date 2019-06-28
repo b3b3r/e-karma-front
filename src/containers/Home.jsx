@@ -53,7 +53,7 @@ class Home extends Component {
             ))}
           </div>
           <div className="worst">
-            <h2>Plus gros trolls</h2>
+            <h2>Top Trolls</h2>
             {worst.map(user => (
               <div className="worst-user">
                 <img src={user.avatar} className="avatar" alt="avatar" />
