@@ -4,6 +4,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from "react-redux";
 
 function Pseudo({ user }) {
+  console.log(user);
+  
   return (
     <div className="Pseudo">
       <div>
@@ -25,7 +27,8 @@ function Pseudo({ user }) {
 }
 
 const mstp = state => ({
-  user: state.users.pseudo
+  user: state.users[0].pseudo
+  
 })
 
 const mdtp = dispatch => bindActionCreators({
