@@ -1,0 +1,13 @@
+.Navbar {
+  background-color: #2B64FF;
+  display: flex;
+  justify-content: space-between;
+  padding: 1%;
+  .logo {
+    width: 125px;
+  }
+  .avatar {
+    width: 125px;
+    border-radius: 50%;
+  }
+}
