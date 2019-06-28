@@ -5,14 +5,14 @@ import { NavLink } from "react-router-dom";
 import "./Navbar.scss";
 class Navbar extends Component {
   render() {
-    const { pseudo, avatar } = this.props;
+    const { users } = this.props;
     return (
       <div className="Navbar">
         <NavLink to="/">
           <img src="/images/Logo.png" className="logo" alt="logo" />
         </NavLink>
         <NavLink to="/profil">
-          <img src={avatar} className="avatar"  alt="profil" />
+          <img src={users[0].avatar} className="avatar"  alt="profil" />
         </NavLink>
       </div>
     );
@@ -20,8 +20,7 @@ class Navbar extends Component {
 }
 
 const mstp = state => ({
-  pseudo: state.displayUser.pseudo,
-  avatar: state.displayUser.avatar
+  users: state.users,
 });
 
 export default connect(mstp)(Navbar);
