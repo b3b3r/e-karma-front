@@ -1,5 +1,6 @@
 .Sousmenu{
   display: flex;
+  justify-content: center;
   .mon-historique{
     margin: 50px;
   }
@@ -8,5 +9,11 @@
   }
   .gamification{
     margin: 50px;
+  }
+  .buton-profil{
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    margin: 10px;
   }
 }
