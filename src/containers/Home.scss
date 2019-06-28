@@ -7,13 +7,36 @@
   flex-direction: column;
   font-family: "montserrat", sans-serif;
   align-items: center;
-  .recherche{
+
+  .recherche {
     width: 1140px;
   }
+
   .topics {
     align-self: center;
-    width: 75%;
+    width: 90%;
     margin-bottom: 5%;
+
+    .topic-title {
+      height: 30px;
+      line-height: 30px;
+      padding: 5px 10px;
+      color: white;
+      font-weight: bold;
+      background-color: $primaryColorDarken;
+      border: 1px solid $borderDarkerColor;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+
+      &:not(:first-child) {
+        margin-top: 50px;
+      }
+    }
+
+    .topic-line {
+      margin: 5px 0;
+    }
+
     .topic {
       background: none;
       position: relative;
@@ -22,10 +45,11 @@
       border: solid $primaryColorLighten 2px;
       padding: 12px 20px;
       transition: color 0.4s linear;
-      margin-top: 2%;
+
       &:hover {
         color: #fff;
       }
+
       &::before {
         content: "";
         position: absolute;
@@ -39,6 +63,7 @@
         transform-origin: 0 0;
         transform: scaleX(0);
       }
+
       &:hover::before {
         transform: scaleX(1);
       }
@@ -49,44 +74,57 @@
         font-weight: bold;
         z-index: 2;
       }
+
       .tags {
         display: flex;
         flex-wrap: wrap;
         z-index: 2;
+
         .tag {
           margin: 1%;
         }
       }
     }
   }
+
   .top-worst {
     display: flex;
+
     .top {
       display: flex;
       flex-direction: column;
       text-align: center;
       justify-content: center;
+      border: 5px solid gold;
+      margin-bottom: 20px;
+      margin-right: 20px;
+
       .top-user {
         display: flex;
         align-items: center;
         justify-content: center;
         margin-bottom: 2%;
+
         .avatar {
           width: 10%;
         }
+
         .desc {
           display: flex;
           flex-direction: column;
           border: solid $primaryColorLighten 2px;
           padding: 1%;
           width: 50%;
+
           .pseudo {
             margin-bottom: 10%;
             font-size: 32px;
             font-weight: 800;
           }
+
           .karma {
             font-size: 20px;
+
             .int {
               font-weight: 800;
             }
@@ -94,31 +132,40 @@
         }
       }
     }
+
     .worst {
       display: flex;
       flex-direction: column;
       text-align: center;
+      border: 5px solid #9e1414;
+      margin-bottom: 20px;
+
       .worst-user {
         display: flex;
         align-items: center;
         justify-content: center;
         margin-bottom: 2%;
+
         .avatar {
           width: 10%;
         }
+
         .desc {
           display: flex;
           flex-direction: column;
           border: solid $primaryColorLighten 2px;
           padding: 1%;
           width: 50%;
+
           .pseudo {
             margin-bottom: 10%;
             font-size: 32px;
             font-weight: 800;
           }
+
           .karma {
             font-size: 20px;
+
             .int {
               font-weight: 800;
             }

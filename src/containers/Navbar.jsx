@@ -18,6 +18,7 @@ class Navbar extends Component {
           ? (
             <NavLink to="/profil">
               <img src={`/images/avatars/${user.imgUrl}.png`} className="avatar"  alt="profil" />
+              <span>Mon profil</span>
             </NavLink>
           )
           : (

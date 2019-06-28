@@ -5,12 +5,10 @@ import { bindActionCreators } from 'redux';
 import { asyncFetchUsers } from '../actions/fetchUsers.js';
 import { asyncFetchTopics } from '../actions/search';
 import { asyncFetchTags } from '../actions/search';
-import { urlApi } from '../constant';
 
 import Input from "../common/Input";
 
 import "./Home.scss";
-
 
 class Home extends Component {
   componentDidMount() {
@@ -49,26 +47,84 @@ class Home extends Component {
       <div className="Home">
         <Input label="Recherche" className="recherche" />
         <div className="topics">
-          {topics.map(topic => (
+          <div className="topic-title"> Animaux </div>
+          <div className="topic-line">
             <NavLink to="/topics/1" className="liens"><div className="topic">
               <div className="core">
-                <div className="title">{topic.title}</div>
+                <div className="title">Pourquoi mon chat est-il aussi moche ?</div>
                 <div className="comments">
-                  {topic.comments.length} commentaires
+                  3 commentaires
                 </div>
               </div>
               <div className="tags">
-              {topic.tags.map(tag => (
-                  <div className="tag">
-                    {
-                      this.findRandomTag()
-                    }
-                  </div>
-                ))}
+                <div className="tag"> animaux </div>
+                <div className="tag"> chats </div>
               </div>
             </div>
             </NavLink>
-          ))}
+          </div>
+          <div className="topic-title"> Jeux vidéos </div>
+          <div className="topic-line">
+            <NavLink to="/topics/1" className="liens"><div className="topic">
+              <div className="core">
+                <div className="title">Cherche un joueur pour Saison Coop FIFA 15 Ps3</div>
+                <div className="comments">
+                  24 commentaires
+                </div>
+              </div>
+              <div className="tags">
+                <div className="tag"> jeux-vidéos </div>
+                <div className="tag"> fifa </div>
+                <div className="tag"> coop </div>
+              </div>
+            </div>
+            </NavLink>
+          </div>
+          <div className="topic-line">
+            <NavLink to="/topics/1" className="liens"><div className="topic">
+              <div className="core">
+                <div className="title">Steep (PC) vue montagne non sélectionnable</div>
+                <div className="comments">
+                  3 commentaires
+                </div>
+              </div>
+              <div className="tags">
+                <div className="tag"> steep </div>
+                <div className="tag"> bug </div>
+              </div>
+            </div>
+            </NavLink>
+          </div>
+          <div className="topic-title"> Divers </div>
+          <div className="topic-line">
+            <NavLink to="/topics/1" className="liens"><div className="topic">
+              <div className="core">
+                <div className="title">Immeuble - Canaux wifi saturés</div>
+                <div className="comments">
+                  45 commentaires
+                </div>
+              </div>
+              <div className="tags">
+                <div className="tag"> wifi </div>
+              </div>
+            </div>
+            </NavLink>
+          </div>
+          <div className="topic-line">
+            <NavLink to="/topics/1" className="liens"><div className="topic">
+              <div className="core">
+                <div className="title">Outil de calibration pour moniteur de PC et Télévision</div>
+                <div className="comments">
+                  12 commentaires
+                </div>
+              </div>
+              <div className="tags">
+                <div className="tag"> tech </div>
+                <div className="tag"> outil </div>
+              </div>
+            </div>
+            </NavLink>
+          </div>
         </div>
         <div className="top-worst">
           <div className="top">
