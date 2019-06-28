@@ -25,7 +25,7 @@ function Pseudo({ user }) {
 }
 
 const mstp = state => ({
-  user: state.displayUser.pseudo
+  user: state.users.pseudo
 })
 
 const mdtp = dispatch => bindActionCreators({

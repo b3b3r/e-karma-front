@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { NavLink } from "react-router-dom";
 
 import Input from "../common/Input";
 
@@ -20,7 +21,7 @@ class Home extends Component {
         <Input label="Recherche" />
         <div className="topics">
           {topics.map(topic => (
-            <div className="topic">
+            <NavLink to="/topics/1" className="liens"><div className="topic">
               <div className="core">
                 <div className="title">{topic.titre}</div>
                 <div className="comments">
@@ -33,6 +34,7 @@ class Home extends Component {
                 ))}
               </div>
             </div>
+            </NavLink>
           ))}
         </div>
         <div className="top-worst">
