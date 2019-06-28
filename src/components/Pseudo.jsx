@@ -1,18 +1,37 @@
 import React from 'react';
 import './Pseudo.scss';
+import { bindActionCreators } from 'redux';
+import { connect } from "react-redux";
 
-function Pseudo() {
+function Pseudo({ user }) {
   return (
     <div className="Pseudo">
       <div>
         <img className="pseudo-image" src="/images/avatars/avatar1.png" alt="avatar" />
       </div>
-      <div>
-        <h2>Pseudo</h2>
+      <div className="pseudo-text">
+        <h2>{user}</h2>
         <p>Karma</p>
+        <div className="progress-bar-container">
+          <p>0</p>
+          <div className="progress-bar">
+          <div className="karma"></div>
+          </div>
+          <p>1</p>
+        </div>
       </div>
     </div>
   )
 }
 
-export default Pseudo;
+const mstp = state => ({
+  user: state.displayUser.pseudo
+})
+
+const mdtp = dispatch => bindActionCreators({
+
+}
+
+)
+
+export default connect(mstp, mdtp)(Pseudo);

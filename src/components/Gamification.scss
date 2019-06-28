@@ -1,8 +1,10 @@
 .Gamification {
   display: flex;
   justify-content: space-around;
+  .badge {
+    width: 150px;
+    margin: 100px;
+    padding: 50px;
+  }
 }
 
-.badge {
-  width: 100px;
-}
