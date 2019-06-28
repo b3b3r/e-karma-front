@@ -7,7 +7,7 @@ function Pseudo() {
       <div>
         <img className="pseudo-image" src="/images/avatars/avatar1.png" alt="avatar" />
       </div>
-      <div>
+      <div className="pseudo-text">
         <h2>Pseudo</h2>
         <p>Karma</p>
       </div>

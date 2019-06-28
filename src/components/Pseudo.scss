@@ -1,8 +1,11 @@
 .Pseudo {
   display: flex;
   text-align: center;
+  margin: 100px;
   .pseudo-image{
-    width: 200px;
+    width: 250px;
   }
-  
+  .pseudo-text{
+    margin-left: 200px;
+  }
 }
