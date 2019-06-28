@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import "./Navbar.scss";
 class Navbar extends Component {
   render() {
-    const { pseudo, avatar } = this.props;
+    const { avatar } = this.props;
     return (
       <div className="Navbar">
         <NavLink to="/">
