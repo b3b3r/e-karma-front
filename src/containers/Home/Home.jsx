@@ -1,22 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { bindActionCreators } from 'redux';
-import { asyncFetchUsers } from '../actions/fetchUsers.js';
-import { asyncFetchTopics } from '../actions/search';
-import { asyncFetchTags } from '../actions/search';
 
-import Input from "../common/Input";
+import Input from "../../common/Input";
 
 import "./Home.scss";
 
 class Home extends Component {
-  componentDidMount() {
-    const { asyncFetchTopics, asyncFetchUsers, asyncFetchTags } = this.props;
-    asyncFetchTopics();
-    asyncFetchUsers();
-    asyncFetchTags();
-  }
 
   findRandomTag = () => {
     const { tags } = this.props;
@@ -28,7 +18,7 @@ class Home extends Component {
   }
 
   render() {
-    const { topics, users } = this.props;
+    const { users } = this.props;
     const top = [];
     const usersArray = [...users].sort(
       (a, b) => parseFloat(a.karma) - parseFloat(b.karma)
@@ -167,9 +157,4 @@ const mstp = state => ({
   tags: state.tags.list,
 });
 
-const mdtp = dispatch => bindActionCreators(
-  { asyncFetchTopics, asyncFetchUsers, asyncFetchTags },
-  dispatch,
-)
-
-export default connect(mstp, mdtp)(Home);
+export default connect(mstp)(Home);

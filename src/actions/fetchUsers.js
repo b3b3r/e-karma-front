@@ -22,7 +22,7 @@ export const asyncFetchUsers = date => (dispatch) => {
     .then(res => res.json())
     .then((apiResponse) => {
       dispatch(fetchSuccessUsers(apiResponse['hydra:member']));
-      dispatch(fetchSuccessUser(apiResponse['hydra:member'][0]));
+      dispatch(fetchSuccessUser(apiResponse['hydra:member'][12]));
     })
     .catch(() => {
       dispatch(fetchErrorUsers('Erreur lors du chargement des utilisateurs'));

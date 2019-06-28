@@ -2,8 +2,8 @@ import React from 'react';
 import moment from 'moment';
 import './Historique.scss';
 
-import upvotes from '../images/arrow-up.svg';
-import downvotes from '../images/arrow-down.svg';
+import upvotes from '../../images/arrow-up.svg';
+import downvotes from '../../images/arrow-down.svg';
 
 const myHistory = [{
   date: 1551524868526,

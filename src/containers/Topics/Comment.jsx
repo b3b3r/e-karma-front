@@ -4,8 +4,8 @@ import moment from 'moment';
 
 import UserTopic from './UserTopic';
 
-import upvotes from '../images/arrow-up.svg';
-import downvotes from '../images/arrow-down.svg';
+import upvotes from '../../images/arrow-up.svg';
+import downvotes from '../../images/arrow-down.svg';
 
 import './Comment.scss';
 
