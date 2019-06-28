@@ -13,7 +13,7 @@ const UserTopic = ({ user }) => {
         {user.name}
       </div>
       <div className="user-karma">
-        <span style={{ width: `${Math.abs(user.karma)}px` }} />
+        <span style={{ width: `${Math.abs(user.karma)}%` }} />
       </div>
       <div className="user-subscription">
         <span>{`Inscrit depuis le ${moment(user.dateSubscribe).format('DD/MM/YYYY')}`}</span>

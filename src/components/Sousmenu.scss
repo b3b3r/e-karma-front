@@ -3,11 +3,11 @@
 .Sousmenu{
   display: flex;
   justify-content: center;
+  height: 50px;
   .bouton-profil{
     width: 200px;
     height: 50px;
     font-size: 20px;
-    margin: 10px;
   }
   .active{
     button{

@@ -9,6 +9,7 @@ $greyColor: #79869e;
 $darkgreyColor: #3B424E;
 $backgroundColor: #ececec;
 $backgroundColorLighten: lighten($backgroundColor, 5%);
+$backgroundColorDarken: darken($backgroundColor, 15%);
 
 /* Forms */
 $inputWidth: 320px;
