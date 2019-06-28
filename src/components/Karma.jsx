@@ -26,7 +26,8 @@ class Karma extends Component {
 
   render() {
     return (
-      <div>
+      <div className="Karma">
+        <h2> Mon karma</h2>
         <canvas
           style={{ width: 400, height: 150 }}
           ref={node => (this.node = node)}

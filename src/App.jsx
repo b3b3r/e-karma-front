@@ -26,21 +26,11 @@ function App() {
         <Route path="/profil" render={() => (
           <Profil>
             <ProfilLeftContent />
-            <Route path="/profil/monhistorique" render={() => (
-              <ProfilRightContent>
-                <Historique />
-              </ProfilRightContent>
-            )} />
-            <Route path="/profil/infoskarma" render={() => (
-              <ProfilRightContent>
-                <Karma />
-              </ProfilRightContent>
-            )} />
-            <Route path="/profil/gamification" render={() => (
-              <ProfilRightContent>
-                <Gamification />
-              </ProfilRightContent>
-            )} />
+            <ProfilRightContent>
+              <Route path="/profil/monhistorique" component={Historique} />
+              <Route path="/profil/infoskarma" component={Karma} />
+              <Route path="/profil/gamification" component={Gamification} />
+            </ProfilRightContent>
           </Profil>
         )} />
       </Switch>
