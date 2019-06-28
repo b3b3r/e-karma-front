@@ -5,7 +5,18 @@
   flex-direction: column;
   align-items: center;
   width: 1200px;
-  margin: 0 auto;
+  margin: 40px auto 0;
+
+  .topic-title {
+    align-self: flex-start;
+    width: calc(100% + 50px);
+    font-size: 36px;
+    color: $primaryColor;
+    font-weight: bold;
+    margin: 0 0 15px -25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid $primaryColorDarken;
+  }
 
   .Comment {
     margin: 3px 0;

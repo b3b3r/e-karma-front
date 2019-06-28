@@ -3,4 +3,16 @@
 
 .App {
   background-color: $backgroundColor;
+
+  .tag {
+    width: auto;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 15px;
+    border: 1px solid $darkgreyColor;
+    border-radius: 0 8px 8px 0;
+    background-color: $primaryColor;
+    color: white;
+    font-size: 13px;
+  }
 }

@@ -1,11 +1,16 @@
 import React from "react";
+import ClassNames from 'classnames';
 import { connect } from "react-redux";
 
 import './ProfilLeftContent.scss';
 
 function ProfilLeftContent({ user }) {
+  const clsPlc = ClassNames('ProfilLeftContent', {
+    'positive-karma': user.karma > 0,
+    'negative-karma': user.karma < 0,
+  });
   return (
-    <div className='ProfilLeftContent'>
+    <div className={clsPlc}>
       <div className="avatar">
         <img src={`/images/avatars/${user.imgUrl}.png`} alt={user.imgUrl} />
       </div>
