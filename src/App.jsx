@@ -6,6 +6,7 @@ import Karma from './components/Karma';
 import { Switch, Route } from 'react-router-dom';
 
 import Navbar from './containers/Navbar';
+import Topic from './containers/Topic';
 import Components from './Components';
 
 import './App.scss';
@@ -13,8 +14,9 @@ import './App.scss';
 function App() {
   return (
     <div className="App">
-       <Navbar />
+      <Navbar />
       <Switch>
+        <Route path="/topics/:id" component={Topic} />
         <Route path="/components" component={Components} />
         <Route path="/profil" render={() => (
           <React.Fragment>
