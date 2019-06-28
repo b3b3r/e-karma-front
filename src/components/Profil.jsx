@@ -1,12 +1,12 @@
 import React from 'react';
-import Gamification from './Gamification';
+import Sousmenu from './Sousmenu';
 import Pseudo from './Pseudo';
 
 function Profil() {
   return (
     <div className="Profil">
       <Pseudo />
-      <Gamification />
+      <Sousmenu />
     </div>
   )
 }
