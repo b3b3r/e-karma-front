@@ -16,9 +16,11 @@ const Comment = ({ user, title, date, comment, votes, top, worst }) => {
     'positive-karma': user.karma > 0,
     'negative-karma': user.karma < 0,
   });
+
   const clsTitle = ClassNames('title', {
     hidden: title === '',
   });
+
   return (
     <div className={clsComment}>
       <UserTopic user={user} />
@@ -45,7 +47,6 @@ const Comment = ({ user, title, date, comment, votes, top, worst }) => {
                   <span>{votes[1]}</span>
                 </span>
               </div>
-
             )
             : ''
         }

@@ -7,9 +7,12 @@ import './Gamification.scss';
 function Gamification() {
   return (
     <div className="Gamification">
+      <h2> Mes badges</h2>
+      <div className="badges">
         <img src={Badge1} className="badge" alt="badge1" />
         <img src={Badge2} className="badge" alt="badge2" />
         <img src={Badge3} className="badge" alt="badge3" />
+      </div>
     </div>
   )
 }

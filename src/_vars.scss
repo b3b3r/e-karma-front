@@ -9,6 +9,7 @@ $greyColor: #79869e;
 $darkgreyColor: #3B424E;
 $backgroundColor: #ececec;
 $backgroundColorLighten: lighten($backgroundColor, 5%);
+$backgroundColorDarken: darken($backgroundColor, 15%);
 
 /* Forms */
 $inputWidth: 320px;
@@ -22,3 +23,9 @@ $borderLighterColor: #e0e0e0;
 $textColor: #3a3a3a;
 $textColorLighten: #8c8c8c;
 $textColorDarken: #292929;
+
+/* Nav Items */
+$navItemColor: white;
+$navBgColor: $primaryColor;
+$navBgColorHover: #225f97;
+$navBorderColor: #18456e;
