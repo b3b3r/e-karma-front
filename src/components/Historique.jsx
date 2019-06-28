@@ -19,7 +19,6 @@ const myHistory = [{
 function Historique() {
   return (
     <div className="Historique">
-      <p>historique</p>
       <ul>
         {myHistory.map(history=>
         <li>date:{history.date}
