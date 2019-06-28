@@ -1,14 +1,12 @@
 import React from 'react';
-import Sousmenu from './Sousmenu';
-import Pseudo from './Pseudo';
+import './Profil.scss';
 
-function Profil() {
+const Profil = ({ children }) => {
   return (
     <div className="Profil">
-      <Pseudo />
-      <Sousmenu />
+      {children}
     </div>
-  )
+  );
 }
-
+ 
 export default Profil;
