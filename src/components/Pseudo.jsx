@@ -14,7 +14,9 @@ function Pseudo({ user }) {
         <p>Karma</p>
         <div className="progress-bar-container">
           <p>0</p>
-          <div className="progress-bar"></div>
+          <div className="progress-bar">
+          <div className="karma"></div>
+          </div>
           <p>1</p>
         </div>
       </div>
