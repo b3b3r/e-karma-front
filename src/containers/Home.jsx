@@ -3,20 +3,24 @@ import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { bindActionCreators } from 'redux';
 import { asyncFetchUsers } from '../actions/fetchUsers.js';
+import { asyncFetchTopics } from '../actions/search';
 
 import Input from "../common/Input";
 
 import "./Home.scss";
 
+
 class Home extends Component {
 
   componentDidMount() {
-      const { asyncFetchUsers } = this.props;
-      asyncFetchUsers();
-    }
+    const { asyncFetchTopics, asyncFetchUsers } = this.props;
+    asyncFetchTopics();
+    asyncFetchUsers();
+  }
 
   render() {
     const { topics, users } = this.props;
+    
     const top = [];
     const usersArray = [...users].sort(
       (a, b) => parseFloat(a.karma) - parseFloat(b.karma)
@@ -33,18 +37,18 @@ class Home extends Component {
     }
     return (
       <div className="Home">
-        <Input label="Recherche" className="recherche"/>
+        <Input label="Recherche" className="recherche" />
         <div className="topics">
           {topics.map(topic => (
             <NavLink to="/topics/1" className="liens"><div className="topic">
               <div className="core">
-                <div className="title">{topic.titre}</div>
+                <div className="title">{topic.title}</div>
                 <div className="comments">
-                  {topic.commentaires} commentaires
+                  {topic.comments.length} commentaires
                 </div>
               </div>
               <div className="tags">
-                {topic.tags.map(tag => (
+              {topic.tags.map(tag => (
                   <div className="tag">{tag}</div>
                 ))}
               </div>
@@ -88,10 +92,13 @@ class Home extends Component {
 }
 
 const mstp = state => ({
-  topics: state.topics,
-  users: state.users.users
+  topics: state.topics.list,
+  users: state.users.users,
 });
 
-const mdtp = dispatch => bindActionCreators({ asyncFetchUsers }, dispatch);
+const mdtp = dispatch => bindActionCreators(
+  { asyncFetchTopics, asyncFetchUsers },
+  dispatch,
+)
 
 export default connect(mstp, mdtp)(Home);
