@@ -1,0 +1,49 @@
+@import '../vars';
+
+.UserTopic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 200px;
+  min-width: 200px;
+  height: 100%;
+  padding: 5px 0;
+  background-color: $backgroundColorLighten;
+  box-sizing: border-box;
+
+  .user-avatar img {
+    width: 60px;
+    border: 2px solid $borderColor;
+    border-radius: 50%;
+    padding: 6px;
+    overflow: hidden;
+    background-color: white;
+  }
+
+  .user-karma {
+    width: 100px;
+    height: 12px;
+    line-height: 12px;
+    margin: 3px 0;
+    border: 1px solid $borderDarkerColor;
+    border-radius: 3px;
+    background-color: white;
+
+    > span {
+      display: inline-block;
+      height: 12px;
+    }
+  }
+
+  .user-name {
+    margin: 3px 0;
+    color: $primaryColor;
+    font-weight: bold;
+  }
+
+  .user-subscription {
+    font-style: italic;
+    font-size: 12px;
+  }
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import Badge1 from '../images/badge1.svg';
 import Badge2 from '../images/badge2.svg';
 import Badge3 from '../images/badge3.svg';
-import './gamification.css';
+import './Gamification.scss';
 
 function Gamification() {
   return (

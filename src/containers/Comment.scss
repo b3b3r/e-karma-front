@@ -1,0 +1,81 @@
+@import '../vars';
+
+.Comment {
+  display: flex;
+  width: 1200px;
+  min-height: 170px;
+  border: 1px solid $borderColor;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  &.top,
+  &.top .content,
+  &.top .content .votes {
+    border-color: gold;
+    border-width: 2px;
+  }
+
+  &.worst,
+  &.worst .content,
+  &.worst .content .votes {
+    border-color: #bb0303;
+    border-width: 2px;
+  }
+
+  &.positive-karma .UserTopic .user-karma > span {
+    background-color: green;
+  }
+
+  &.negative-karma .UserTopic .user-karma > span {
+    background-color: red;
+  }
+
+  .content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+    padding-left: 10px;
+    border-left: 2px solid $borderDarkerColor;
+    background-color: white;
+
+    .date {
+      margin-bottom: 2px;
+      padding-bottom: 2px;
+      font-size: 12px;
+      color: $textColorLighten;
+      border-bottom: 1px solid $borderLighterColor;
+    }
+
+    .title {
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 18px;
+      color: $textColorDarken;
+    }
+
+    .comment {
+      flex-grow: 1;
+    }
+
+    .votes {
+      align-self: flex-end;
+      display: flex;
+      justify-content: space-around;
+      width: 100px;
+      height: 30px;
+      margin: 0 -2px -2px 0;
+      border: 2px solid $borderDarkerColor;
+      border-bottom-right-radius: 4px;
+      border-top-left-radius: 4px;
+
+      .upvotes,
+      .downvotes {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        font-size: 12px;
+      }
+    }
+  }
+}
