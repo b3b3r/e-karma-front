@@ -6,7 +6,6 @@ import "./Navbar.scss";
 class Navbar extends Component {
   render() {
     const { pseudo, avatar } = this.props;
-    console.log({ pseudo });
     return (
       <div className="Navbar">
         <NavLink to="/">
